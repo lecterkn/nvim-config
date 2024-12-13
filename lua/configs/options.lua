@@ -10,6 +10,10 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
 vim.opt.termguicolors = true
 
 -- lsp format
@@ -25,6 +29,7 @@ local patterns = {
     "*.go",
     "*.rs",
 }
+
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = patterns,
     callback = function()
