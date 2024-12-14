@@ -8,6 +8,8 @@ local servers = {
     "jsonls",
     "svelte",
     "ts_ls",
+    "dockerls",
+    "docker_compose_language_service",
 }
 
 -- lsps with default config
