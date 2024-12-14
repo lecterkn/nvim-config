@@ -10,5 +10,7 @@ return function(use)
     use {
         "scottmckendry/cyberdream.nvim"
     }
-    vim.cmd("colorscheme cyberdream")
+    use {
+        "rebelot/kanagawa.nvim"
+    }
 end
