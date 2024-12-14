@@ -4,7 +4,7 @@ local builtin = require('telescope.builtin')
 -- find files
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 -- grep
-vim.keymap.set('n', '<leader>ps', function()
+vim.keymap.set('n', '<leader>ss', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 -- colorscheme
