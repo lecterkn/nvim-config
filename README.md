@@ -1,5 +1,9 @@
 # NeoVim configs
 
+## Require
+
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+
 ## Plugins
 - PluginManager
   - packer
