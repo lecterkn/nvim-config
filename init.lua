@@ -46,9 +46,15 @@ return require('packer').startup(function(use)
 
     -- nvim-tree
     use {
-        "nvim-tree/nvim-tree.lua"
+        "nvim-tree/nvim-tree.lua",
+        'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
     }
 
+    -- file buffers
+    use 'romgrk/barbar.nvim'
+    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+
+    -- terminal
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }
