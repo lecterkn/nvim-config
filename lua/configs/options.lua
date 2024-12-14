@@ -15,6 +15,8 @@ vim.opt.wrap = false
 
 vim.opt.termguicolors = true
 
+vim.opt.fillchars = { eob = ' ' }
+
 -- lsp format
 local patterns = {
     "*.json",
