@@ -13,7 +13,10 @@ require("nvim-tree").setup({
             ".idea",
             ".vscode",
             ".DS_Store",
-        }
+        },
+        exclude = {
+            ".env"
+        },
     }
 })
 
