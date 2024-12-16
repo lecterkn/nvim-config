@@ -1,3 +1,6 @@
+require("barbar").setup({
+    animation = false,
+})
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
