@@ -2,33 +2,31 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local lspconfig = require("lspconfig")
-local servers = {
-    "rust_analyzer",
-    "lua_ls",
-    "jsonls",
-    "svelte",
-    "ts_ls",
-    "dockerls",
-    "docker_compose_language_service",
+
+local handlers = {
+    function(server_name) -- default handler (optional)
+        lspconfig[server_name].setup {}
+    end,
+    ["gopls"] = function()
+        lspconfig.gopls.setup({
+            settings = {
+                gopls = {
+                    analyses = {
+                        unusedparams = true,
+                    },
+                    staticcheck = true,
+                    gofumpt = true,
+                },
+            },
+        })
+    end
 }
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {}
-end
+-- alt 1. Either pass handlers when setting up mason-lspconfig:
+-- require("mason-lspconfig").setup({ handlers = handlers })
 
--- gopls
-lspconfig.gopls.setup({
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            staticcheck = true,
-            gofumpt = true,
-        },
-    },
-})
+-- alt 2. or call the .setup_handlers() function.
+require("mason-lspconfig").setup_handlers(handlers)
 
 local rt = require("rust-tools")
 rt.setup({
