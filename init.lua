@@ -27,6 +27,19 @@ return require('packer').startup(function(use)
     }
     use 'simrat39/rust-tools.nvim'
 
+    -- auto pairs
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
+
+    -- formatter
+    use('nvimtools/none-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
     -- snippets
     use {
         'hrsh7th/cmp-nvim-lsp',
@@ -55,6 +68,12 @@ return require('packer').startup(function(use)
     use {
         "akinsho/toggleterm.nvim",
         tag = '*',
+    }
+
+    -- lua line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
     -- theme
