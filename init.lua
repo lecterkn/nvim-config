@@ -62,7 +62,9 @@ return require('packer').startup(function(use)
 
     -- file buffers
     use 'romgrk/barbar.nvim'
-    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+
+    -- git
+    use { "lewis6991/gitsigns.nvim" }
 
     -- terminal
     use {
