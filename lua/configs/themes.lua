@@ -3,14 +3,9 @@ return function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
-    use {
-        "folke/tokyonight.nvim",
-    }
-
-    use {
-        "scottmckendry/cyberdream.nvim"
-    }
-    use {
-        "rebelot/kanagawa.nvim"
-    }
+    use { "folke/tokyonight.nvim", }
+    use { "scottmckendry/cyberdream.nvim" }
+    use { "rebelot/kanagawa.nvim" }
+    use { "ellisonleao/gruvbox.nvim" }
+    use { "sainnhe/gruvbox-material" }
 end
