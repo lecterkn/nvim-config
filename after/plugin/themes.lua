@@ -13,22 +13,21 @@ require("gruvbox").setup({
 })
 
 require("tokyonight").setup({
-    transparent = true,
+    transparent = false,
     terminal_colors = true,
     styles = {
-        -- Style to be applied to different syntax groups
-        -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = false },
         keywords = { italic = false },
-        -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = "dark", -- style for sidebars, see below
-        floats = "dark",   -- style for floating windows
     },
 })
 
 require("catppuccin").setup({
     transparent_background = true,
 })
+
+-- nord
+vim.g.nord_disable_background = true
+vim.g.nord_italic = false
 
 function ColorMyPencils(color)
     color = color or "rose-pine-moon"
