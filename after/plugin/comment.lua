@@ -9,7 +9,3 @@ require('Comment').setup({
         block = '/',
     },
 })
-
-aa
-addada
-wada
