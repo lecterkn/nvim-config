@@ -5,6 +5,7 @@
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Plugins
+
 - PluginManager
   - packer
 - FileExplorer
@@ -20,11 +21,12 @@
   - lspconfig
 - Snippets
   - nvim-cmp
-  - cmp-nvim-lsp  
+  - cmp-nvim-lsp
 - Terminal
   - toggleterm
 
 ## ColorSchemes
+
 - rose-pine
 - cyberdream
 - tokyonight
