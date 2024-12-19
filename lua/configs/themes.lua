@@ -8,4 +8,6 @@ return function(use)
     use { "rebelot/kanagawa.nvim" }
     use { "ellisonleao/gruvbox.nvim" }
     use { "sainnhe/gruvbox-material" }
+    use "EdenEast/nightfox.nvim"
+    use { "catppuccin/nvim", as = "catppuccin" }
 end
