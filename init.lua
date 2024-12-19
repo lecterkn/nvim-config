@@ -36,6 +36,11 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- comment
+    use {
+        'numToStr/Comment.nvim',
+    }
+
     -- formatter
     use('nvimtools/none-ls.nvim')
     use('MunifTanjim/prettier.nvim')
