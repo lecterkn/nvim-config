@@ -22,20 +22,42 @@ require("tokyonight").setup({
 })
 
 require("catppuccin").setup({
-    transparent_background = true,
+    --   transparent_background = true,
 })
 
 -- nord
 vim.g.nord_disable_background = true
 vim.g.nord_italic = false
 
-function ColorMyPencils(color)
-    color = color or "rose-pine-moon"
-    vim.cmd.colorscheme(color)
+local scheme_file = vim.fn.expand('$HOME/.config/nvim/configs/colorscheme')
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+local function save_colorscheme(scheme)
+    local file = io.open(scheme_file, 'w')
+    if file then
+        file:write(scheme)
+        file:close()
+    end
 end
 
--- ColorMyPencils()
-vim.cmd("colorscheme rose-pine-main")
+local function load_last_colorscheme()
+    local file = io.open(scheme_file, 'r')
+    if file then
+        local scheme = file:read('*a')
+        file:close()
+        scheme = vim.fn.trim(scheme)
+        if scheme and #scheme > 0 then
+            vim.cmd('colorscheme ' .. scheme)
+        end
+    end
+end
+
+load_last_colorscheme()
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+    callback = function()
+        local current_scheme = vim.g.colors_name
+        if current_scheme then
+            save_colorscheme(current_scheme)
+        end
+    end,
+})
